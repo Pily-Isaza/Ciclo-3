@@ -2,3 +2,5 @@ Holaaaa esperamos funcione!
 Jessi Vasquez -Ingeniera Forestal 
 
 Me alegra mucho que al fin lograramos usar pull y push en gitgub desde git :) Dayana C
+
+Aqui voy, dandolaa toda por aprender a aprendedr a manejar git y github Cristhian Jose Neiva
