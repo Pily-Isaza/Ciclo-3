@@ -2,6 +2,7 @@
 Desarrollo de Software MinTIC
 
 Aca va la infomación de nuestro grupo;
+
 Kristhian Santiago Palomino Fajardo      
 Dayana Carreño Ortiz      
 Cristhian Jose Neiva Castillo      
