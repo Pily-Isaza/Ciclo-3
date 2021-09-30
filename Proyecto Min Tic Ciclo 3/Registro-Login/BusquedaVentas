@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./stylesForm.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/ea3e79d899.js" crossorigin="anonymous"></script>">
+    <title>Consultar Ventas</title>
+</head>
+
+<body>
+    <form>
+        <main>
+        <h1 class="alinear">Buscar ventas</h1>
+    <ul class="contenedor2"  style="list-style: none;">
+        <li> <i class="fas fa-search"></i>
+        
+        <br>
+        <br>
+    <div class="buscar">   
+        <input class="buscar2"  type="search" placeholder="Por nombre"/>
+        
+        
+        <br>
+        <br>
+                
+        <input class="buscar2" type="number" placeholder="Por identificacion"/>
+        </li>
+        <br>
+    </div>
+    <div class="alinear">
+        <button type="submit"> Enviar datos </button>        
+        </div>
+        <br>
+        
+        <div class="alinear">
+            <button type="reset" > Reiniciar </button>
+        </div>
+    </ul>
+    </main>
+</form>
+
+</body>
+</html>
