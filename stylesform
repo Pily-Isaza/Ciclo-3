@@ -1,0 +1,38 @@
+.formulario {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.contenedor{
+    border: 2px solid blue;
+    margin-top: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: lightblue ;
+}
+
+.colorFondo {
+    background-color: lightpink;
+}
+
+.colorTexto {
+    color: black;
+    
+}
+
+.alinearDerecha {
+    text-align: right;
+    
+}
+.alinear {
+    display: flex;
+    justify-content: center;
+  }
