@@ -32,7 +32,7 @@
     <div class="alinear">
         <button type="submit"> Enviar datos </button>        
         </div>
-        <br>
+        <br> 
         
         <div class="alinear">
             <button type="reset" > Reiniciar </button>
