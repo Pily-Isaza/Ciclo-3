@@ -1,26 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios';
-import 'react-toastify/dist/ReactToastify.css';
 
-const Productos = () => {
-  const [mostrarTabla, setMostrarTabla] = useState(true);
-  const [productos, setProductos] = useState([]);
-  const [textoBoton, setTextoBoton] = useState('Crear Nuevo Producto');
-  const [colorBoton, setColorBoton] = useState('indigo');
 
-  useEffect(() => {
-    const obtenerProductos = async () => {
-      const options = { method: 'GET', url: 'https://vast-waters-45728.herokuapp.com/vehicle/' };
-      await axios
-        .request(options)
-        .then(function (response) {
-          setProductos(response.data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-    };
+const productosBackend = [
+  {
+    nombre: 'Galleta',
+    codigo: '01',
+    precio: 3500,
+  },
+  {
+    nombre: 'Torta',
+    codigo: '02',
+    precio: 70000,
+  },
+  {
+    nombre: 'Pan',
+    codigo: '03',
+    precio: 12000,
+  },
+  {
+    nombre: 'Pastel',
+    codigo: '04',
+    precio: 5000,
+  },
+  {
+    nombre: 'Chocolate',
+    codigo: '05',
+    precio: 2500,
+  },
+  {
+    nombre: 'Pastel',
+    codigo: '04',
+    precio: 5000,
+  },
+  {
+    nombre: 'Torta',
+    codigo: '02',
+    precio: 70000,
+  },
+];
 
     //obtener lista de productos desde el backend
     if (mostrarTabla) {
@@ -38,34 +55,6 @@ const Productos = () => {
     }
   }, [mostrarTabla]);
 
-  return (
-    <div className='flex h-full w-full flex-col items-center justify-start p-8'>
-      <div className='flex flex-col'>
-        <h2 className='text-3xl font-extrabold text-gray-900'>
-          Página de administración de productos
-        </h2>
-        <button
-          onClick={() => {
-            setMostrarTabla(!mostrarTabla);
-          }}
-          className={`text-white bg-${colorBoton}-500 p-5 rounded-full m-6 w-28 self-end`}
-        >
-          {textoBoton}
-        </button>
-      </div>
-      {mostrarTabla ? (
-        <TablaProductos listaProductos={Productos} />
-      ) : (
-        <FormularioCreacionProductos
-          setMostrarTabla={setMostrarTabla}
-          listaProductos={Productos}
-          setProductos={setProductos}
-        />
-      )}
-      <ToastContainer position='bottom-center' autoClose={5000} />
-    </div>
-  );
-};
 
 const TablaProductos = ({ listaProductos }) => {
   useEffect(() => {
@@ -109,13 +98,6 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
     fd.forEach((value, key) => {
       nuevoProducto[key] = value;
     });
-
-    const options = {
-      method: 'POST',
-      url: 'https://vast-waters-45728.herokuapp.com/vehicle/create',
-      headers: { 'Content-Type': 'application/json' },
-      data: { name: nuevoProducto.name, codigo: nuevoProducto.codigo, precio: nuevoProducto.precio },
-    };
 
     await axios
       .request(options)
