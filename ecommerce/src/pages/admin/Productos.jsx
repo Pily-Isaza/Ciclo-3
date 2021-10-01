@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const productosBackend = [
@@ -39,22 +41,55 @@ const productosBackend = [
   },
 ];
 
+const Productos = () => {
+  const [mostrarTabla, setMostrarTabla] = useState(true);
+  const [productos, setProductos] = useState([]);
+  const [textoBoton, setTextoBoton] = useState('Crear Nuevo Producto');
+  const [colorBoton, setColorBoton] = useState('indigo');
+
+
+  useEffect(() => {
     //obtener lista de productos desde el backend
-    if (mostrarTabla) {
-      obtenerProductos();
-    }
-  }, [mostrarTabla]);
+    setProductos(productosBackend);
+  }, []);
 
   useEffect(() => {
     if (mostrarTabla) {
       setTextoBoton('Crear Nuevo Producto');
       setColorBoton('indigo');
     } else {
-      setTextoBoton('Mostrar Todos los productos);
+      setTextoBoton('Mostrar Todos los productos');
       setColorBoton('green');
     }
   }, [mostrarTabla]);
-
+  return (
+    <div className='flex h-full w-full flex-col items-center justify-start p-8'>
+      <div className='flex flex-col'>
+        <h2 className='text-3xl font-extrabold text-gray-900'>
+          Página de administración de productos
+        </h2>
+        <button
+          onClick={() => {
+            setMostrarTabla(!mostrarTabla);
+          }}
+          className={`text-white bg-${colorBoton}-500 p-5 rounded-full m-6 w-28 self-end`}
+        >
+          {textoBoton}
+        </button>
+      </div>
+      {mostrarTabla ? (
+        <TablaProductos listaProductos={productos} />
+      ) : (
+        <FormularioCreacionProductos
+          setMostrarTabla={setMostrarTabla}
+          listaProductos={productos}
+          setProductos={setProductos}
+        />
+      )}
+      <ToastContainer position='bottom-center' autoClose={5000} />
+    </div>
+  );
+};
 
 const TablaProductos = ({ listaProductos }) => {
   useEffect(() => {
@@ -99,18 +134,12 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
       nuevoProducto[key] = value;
     });
 
-    await axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-        toast.success('producto agregado con éxito');
-      })
-      .catch(function (error) {
-        console.error(error);
-        toast.error('Error creando un producto');
-      });
-
     setMostrarTabla(true);
+    setProductos([...listaProductos, nuevoProducto]);
+    // identificar el caso de éxito y mostrar un toast de éxito
+    toast.success('producto agregado con éxito');
+    // identificar el caso de error y mostrar un toast de error
+    // toast.error('Error creando un producto');
   };
 
   return (
