@@ -1,0 +1,96 @@
+.formulario {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    text-align: center;
+    
+}
+
+.contenedor{ 
+    border: 2px solid purple;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(212, 243, 226)  ;
+    font-weight: bolder;
+    color: black;
+    
+}
+
+.colorFondo {
+    
+    background: url(./massimiliano-morosinotto-0Hr2m3V_w1Q-unsplash.jpg);
+    background-size: 1400px;
+}
+    
+
+.colorTexto{
+    color: black;
+}
+
+.alinearDerecha {
+    text-align: right;
+    
+}
+
+
+.alinear {
+    display: flex;
+    justify-content: center;
+  }
+
+.buscar {
+    
+    border: 1px;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.buscar2:hover {
+    background-color: thistle;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.centrar {
+    display: table-row;
+    justify-content: space-around;
+    justify-content: space-evenly;
+  }
+
+  .buscar3:hover {
+    background-color: lightgrey;
+    border-radius: 6px;
+}
+  .contenedor2{
+    border: 5px solid pink;
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-color: rgb(179, 217, 243) ;
+}
+
+.bordeRedondo {
+    border-radius: 6px;
+    border-color: black;
+}
+
+.fondo {
+    
+    background: url(./massimiliano-morosinotto-0Hr2m3V_w1Q-unsplash.jpg);
+    background-size: 1400px;
+}
+
