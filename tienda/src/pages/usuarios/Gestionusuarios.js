@@ -1,8 +1,25 @@
-import usuariosJson from "json/usuarios.json";
 import RegistrosUsuarios from "components/Roles/Registro";
 import "styles/component/Roles/Roles.css"
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function gestionusuarios() {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    const options = { method: "GET", url: "http://localhost:5000/usuarios" };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data)
+        setUsuarios(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <div className="container">
       <section className="vistas">
@@ -37,13 +54,13 @@ export default function gestionusuarios() {
               <th className="col-1">Id</th>
               <th className="col-2">Rol</th>
               <th className="col-2">Estado</th>
-              <th>Nombre</th>
+              <th className="col-3">Nombre</th>
               <th className="col-1">Opciones</th>
             </tr>
           </thead>
 
           <tbody>
-            {usuariosJson.map((usuario) => (
+            {usuarios.map((usuario) => (
               <RegistrosUsuarios
                 id={usuario.id}
                 estado={usuario.estado}

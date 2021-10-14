@@ -1,7 +1,6 @@
 import React from 'react'
 import Tabla from 'components/ventas/Tabla'
-// import stylesVentasIndex from 'styles/pages/ventas/ventasIndex.css'
-import BarraBusqueda from 'components/ventas/BarraBusqueda';
+import Buscar from 'components/ventas/Buscar';
 import Formulario from 'components/ventas/Formulario';
 
 

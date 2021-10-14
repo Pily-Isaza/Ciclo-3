@@ -1,8 +1,8 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+
 import 'styles/estilos.css';
 
-const AuthLayout = ({ children }) => {
+const authLayout = ({ children }) => {
   return (
    
     <div className="outer"> 
@@ -11,4 +11,4 @@ const AuthLayout = ({ children }) => {
   );
 };
 
-export default AuthLayout;
+export default authLayout;

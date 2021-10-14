@@ -1,27 +1,36 @@
 import Menu from "components/NavBar/Menu"
-let ListaModulos = [
-    {
-        "id":"001",
-       "nombre":"Iniciar Sesion",
-       "ruta":"/login" 
-    },
-    {
-        "id":"001",
-       "nombre":"Modulos",
-       "ruta":"/usuarios" 
-    }
-]
-const Layout = ({children}) => {
-    return (
-        <div >
-            <header>
-                <Menu ModulosYRutas={ListaModulos}/>
-            </header>
-            <main>
-            {children}
-            </main>        
-        </div>
-    )
-}
+import { useState } from "react";
+import "styles/layoutPrivado.css";
 
-export default Layout
+const Layout = ({ children }) => {
+    const [paginaActual, setPaginaActual] = useState('/')
+
+    let ListaModulos = [
+        {
+          id: "001",
+          nombre: "Iniciar Sesion",
+          ruta: "/login",
+        },
+        {
+          id: "002",
+          nombre: "Modulos",
+          ruta: "/usuarios",
+        },
+      ];
+  
+  return (
+    <div>
+      <header>
+        <Menu
+          ModulosYRutas={ListaModulos}
+          paginaActual = {paginaActual}
+          onChange = {(pagina) => setPaginaActual(pagina)}
+
+        />
+      </header>
+      <main>{children}</main>
+    </div>
+  );
+};
+
+export default Layout;

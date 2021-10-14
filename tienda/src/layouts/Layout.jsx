@@ -1,11 +1,17 @@
-import Menu from "components/NavBar/Menu"
-import ListaModulos from "json/menuModuleNames.json"
+
+import ListaModulos from "./json/modulosMenu.json"
+import { useState } from "react";
+import { useLocation } from "react-router";
+import "styles/layoutPrivado.css";
 
 const Layout = ({children}) => {
+    const location = useLocation();
+    const [paginaActual, setPaginaActual] = useState(location.pathname);
     return (
-        <div >
+        <div className='contenedorPrincipal'>
             <header>
-                <Menu ModulosYRutas={ListaModulos}/>
+                <Menu ModulosYRutas={ListaModulos} paginaActual={paginaActual}
+          onChange={(pagina) => setPaginaActual(pagina)}/>
             </header>
             <main>
             {children}

@@ -1,17 +1,20 @@
+import { nanoid } from "nanoid";
 import { Link } from "react-router-dom";
-export default function Menu(props) {
- 
-    let paths=props.ModulosYRutas
+import "styles/menu.css";
+
+export default function Menu ({ ModulosYRutas, paginaActual, onChange }) {
   
   const nombraModulos = () => {
     const resultado = [];
 
-    paths.forEach((modulo) => {
+    ModulosYRutas.forEach((modulo) => {
 
       resultado.push(
         
-        <li key={modulo.id}>
-          <Link to={modulo.ruta} className='ruta'>{modulo.nombre}</Link>
+        <li key={nanoid}>
+          <Link to={modulo.ruta} className={paginaActual === modulo.ruta ? "active" : "ruta"} onClick= {() => onChange(modulo.ruta)}>
+            {modulo.nombre}
+            </Link>
         </li>
       );
     });
@@ -20,7 +23,7 @@ export default function Menu(props) {
 
   return (
     <nav className="lista-enlaces">
-      <Link to="/">
+      <Link to="/" className='text-decoration-none'>
       <h1 className="titulo">Tienda</h1>
       </Link>
 

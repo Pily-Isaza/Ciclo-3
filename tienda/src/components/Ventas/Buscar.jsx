@@ -1,7 +1,7 @@
 import React from 'react'
-import stylesComponentsBarraBusqueda from 'styles/components/ventas/componentsBarraBusqueda.css'
+import 'styles/components/ventas/componentsBuscar.css'
 
-const BarraBusqueda = () => {
+const Buscar = () => {
     return (
         <>
             <input type="search" placeholder="Ingrese ID del producto, ID o nombre del cliente" />
@@ -12,4 +12,4 @@ const BarraBusqueda = () => {
     )
 }
 
-export default BarraBusqueda
+export default Buscar
