@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./stylesForm.css" rel="stylesheet"/>
+    
+
+    <title>Ventas</title>
+   
+</head>
+<body class="colorFondo">
+    <main>
+    
+    <a href="./iinicio.html"> Pagina principal</a>
+    <br>
+    <br>
+    
+    <a href="./consultarVentas.html"> Consultar ventas</a> 
+    <form class="colorTexto">
+
+        <h1 class="formulario">Nueva venta</h1>
+        <ul class="contenedor" style="list-style-type: none;">
+            <li><label for="fecha">
+                Fecha de la transacción
+            <input class="bordeRedondo" name="fecha" type="date"/>
+            </label></li>
+            <br>
+
+            <li><label for="nombre">
+                Nombre del cliente
+                <input class="bordeRedondo" name="nombre" placeholder="Ej Daniel Gomez">
+            </label></li>
+            <br>
+
+            <li ><label for="identificacion">
+                Identificacion del cliente
+                <input class="bordeRedondo" type="number" name="identificacion" placeholder="Número de cédula">
+            </label></li>
+            <br>
+
+            <li><label  for="productos">Producto:</label>
+                <select name="productos" id="productos">
+                    <option value="seleccionar">Seleccionar</option>
+                    <option value="mielGrande">Miel de abejas - 750gr - Cod. 101</option>
+                    <option value="mielPequeña">Miel de abejas - 500gr - Cod.102</option>
+                    <option value="polen">Polen - 250gr - Cod 103</option>
+                    <option value="chocolate">Chocolate granulado -250gr - Cod.603 </option>
+                </select>
+
+            </li>
+            <br>
+            <li  ><label for= "disponibleSiNo">
+                ¿El producto está disponible? Sí 
+            <input class="bordeRedondo"  name= "disponibleSi" type="radio"/>
+            No <input class="bordeRedondo"  name="disponibleNo" type="radio">
+            </label></li>
+            <br>
+
+            <li ><label for="precio">
+                Precio del producto
+            <input class="bordeRedondo" type="number" name="precio" placeholder="Ej: 35000">
+            </label></li> 
+            <br>
+
+            <li ><label for="cantidad">
+                Cantidad a vender
+            <input class="bordeRedondo"  name="cantidad" type="number">
+            </label></li>
+            <br>
+
+        </ul>
+        
+
+        <div class="alinear">
+            <script>
+                function alerta() {
+                    alert ("Datos enviados")
+                }
+              
+              </script>
+        <input class="buscar2" type="button"  onclick="alerta()" value="Enviar" >
+            
+               
+        </div>
+        <br>
+        
+        <divc class="alinear">
+            <button class="buscar2" type="reset" > Reiniciar 
+                
+            </button>
+        </div>
+        
+      
+    </form>
+</main>
+</body>
+</html>
